@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\pass;
+use App\Http\Controllers\show;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,5 +28,12 @@ Route::get('/getid', function () {
     return view('getid');
 });
 
+Route::get('/post', function () {
+    return view('posts.post');
+});
+
+Route::get('/home',[pass::class,'home']);
 Route::get('/getall',[RegisterController::class,'getdata']);
 Route::get('/getid',[RegisterController::class,'getid']);
+
+Route::get('/calculate',[show::class,'calculate']);
